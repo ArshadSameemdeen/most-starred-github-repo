@@ -1,14 +1,13 @@
 import React, {useEffect, useState} from 'react'
 import List from './components/List'
 import axios from 'axios'
-//import Pagination from './components/Pagination'
+import Pagination from './components/Pagination'
 
 function App() {
-  const url = 'https://api.github.com/search/repositories?q=created:>'+getCurrentDate()+'&sort=stars&order=desc'
+  var pageNumber = 1
+  var [url, setUrl] = useState('https://api.github.com/search/repositories?q=created:>'+getCurrentDate()+'&sort=stars&order=desc'+pageNumber);
   const [repos, setRepo] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postPerPage, setpostPerPage] = useState(10);
 
   function getCurrentDate(){
     var date = new Date();
@@ -19,7 +18,8 @@ function App() {
   useEffect(() => {
     const fetchdata = async () => {
         setLoading(true);
-        const responce = await axios.get(url);
+        var newURL = url
+        const responce = await axios.get(newURL);
         setRepo(responce.data.items);
         setLoading(false);
     }
@@ -28,9 +28,18 @@ function App() {
     fetchdata();
   }, [url])
 
+  //change page
+  const paginate = (number) =>{
+    pageNumber = number;
+    setUrl('https://api.github.com/search/repositories?q=created:>'+getCurrentDate()+'&sort=stars&order=desc&page='+pageNumber);
+    console.log(url);
+  }
+  
+
   return (
       <div className="container">
         <List repos={repos} loading={loading}/>
+        <Pagination paginate={paginate}/>
       </div>
   );
 }

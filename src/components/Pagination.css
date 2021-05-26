@@ -1,0 +1,18 @@
+ul.list li {
+  display: inline;
+}
+.pagination li {
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.list li.active {
+  background-color: #04d3d9;
+  color: white;
+}
+
+.pagination li:hover:not(.active) {
+  background-color: #ddd;
+}
