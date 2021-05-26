@@ -39,7 +39,7 @@ function App() {
   return (
       <div className="container">
         <List repos={repos} loading={loading}/>
-        <Pagination paginate={paginate}/>
+        <Pagination paginate={paginate} loading={loading}/>
       </div>
   );
 }

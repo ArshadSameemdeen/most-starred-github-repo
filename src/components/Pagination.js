@@ -1,11 +1,17 @@
 import React from 'react'
 import './Pagination.css'
 
-const Pagination = ({paginate}) => {
+const Pagination = ({paginate, loading}) => {
     const pageNumbers = [];
 
     for (let i = 1; i <= 30; i++) {
         pageNumbers.push(i);
+    }
+
+    if (loading){
+        return (
+            <></>
+        )
     }
     
     return (
