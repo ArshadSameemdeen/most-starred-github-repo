@@ -1,7 +1,5 @@
+import React from 'react'
 import './List.css'
-import React, {useEffect, useState} from 'react'
-//import axios from 'axios'
-//import Pagination from './Pagination'
 
 const List = ({repos, loading}) => {
     if (loading){
@@ -15,7 +13,7 @@ const List = ({repos, loading}) => {
             <div className='flex-container'>
                 <h1>Github Most Starred Repos</h1>
                 {repos.map(repos => (
-                        <ul>
+                        <ul className='ul-class'>
                             <li className='list'>
                                 <img className='image' src={repos.owner.avatar_url} />
                                 <h2 className='header'>{repos.full_name}</h2>

@@ -10,15 +10,15 @@ const Pagination = ({paginate}) => {
     
     return (
         <div className="pagination">
-        <ul className="list">
-        {pageNumbers.map(number => (
-          <li key={number} className='page-item'>
-            <a onClick={() => paginate(number)} href='!#' className='page-link'>
-              {number}
-            </a>
-          </li>
-        ))}
-      </ul>
+            <ul className="pages">
+                {pageNumbers.map(number => (
+                <li key={number} className='page-item'>
+                    <a onClick={() => paginate(number)} href='!#' className='page-link'>
+                    {number}
+                    </a>
+                </li>
+                ))}
+            </ul>
         </div>
     )
 }

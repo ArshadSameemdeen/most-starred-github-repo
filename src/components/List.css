@@ -56,11 +56,11 @@ h1 {
   color: white;
 }
 
-div {
-  margin: 20px;
+.flex-container {
+  margin: 55px;
 }
 
-ul {
+.ul-class {
   list-style-type: none;
   margin-left: 200px;
   margin-right: 200px;
@@ -83,9 +83,4 @@ h3 {
 .list:hover {
   background: #eee;
   cursor: pointer;
-}
-
-.pager {
-  display: flex;
-  justify-content: flex-start;
 }
