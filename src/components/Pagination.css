@@ -1,5 +1,5 @@
 .pagination {
-  display: table; /* Allow the centering to work */
+  display: table;
   margin: 0 auto;
   margin-top: 50px;
   margin-bottom: 50px;
@@ -8,6 +8,10 @@
   min-width: 700px;
   list-style: none;
   padding-top: 20px;
+}
+
+.page li {
+  width: 10px;
 }
 
 a {
